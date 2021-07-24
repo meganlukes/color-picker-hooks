@@ -17,6 +17,15 @@ export function App() {
     setLightness(event.target.value)
   }
 
+  function randomize() {
+    var randomHue = Math.random() * 360
+    setHue(randomHue)
+    var randomSaturation = Math.random() * 100
+    setSaturation(randomSaturation)
+    var randomLightness = Math.random() * 100
+    setLightness(randomLightness)
+  }
+
   return (
     <>
       <body
@@ -66,6 +75,11 @@ export function App() {
                 onInput={changeLightness}
                 value={lightness}
               />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <button onClick={randomize}>Random Color!</button>
             </li>
           </ul>
         </div>
